@@ -1,13 +1,13 @@
-#include <stdio.h>
+#include <string.h>
 
 
 // - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf 
 
 struct Carta {
-    char estado;               // identifica o estado
-    char codigo;              // Código da carta (ex.: A01, B03)
-    char cidade;             // Nome da cidade
+    char estado[32];               // identifica o estado
+    char codigo[16];              // Código da carta (ex.: A01, B03)
+    char cidade[64];             // Nome da cidade
     int populacao;               // Número de habitantes
     float area;                  // Área em km²
     float pib;                   // PIB da cidade em reais
@@ -25,13 +25,13 @@ int main () {
     // Cadastro da Carta 1
     printf("=== Cadastro da Carta 1 ===\n");
     printf("Estado:");
-    scanf("%s", &carta1.estado);
+    scanf("%31[^\n]", &carta1.estado);
     
     printf("Codigo da carta: ");
     scanf("%c", &carta1.codigo);
     
     printf("Nome da Cidade: ");
-    scanf("%s", &carta1.cidade);
+    scanf("%63[^\n]", &carta1.cidade);
 
     printf("Populacao: ");
     scanf("%d", &carta1.populacao);
@@ -48,13 +48,13 @@ int main () {
     // Cadastro da Carta 2
     printf("\n=== Cadastro da Carta 2 ===\n");
     printf("Estado: ");
-    scanf(" %c", &carta2.estado);
+    scanf(" %31[^\n]", &carta2.estado);
 
     printf("Codigo (ex.: B02): ");
     scanf("%s", &carta2.codigo);
 
     printf("Nome da Cidade: ");
-    scanf(" %s", &carta2.cidade);
+    scanf(" %63[^\n]", &carta2.cidade);
 
     printf("Populacao: ");
     scanf("%d", &carta2.populacao);
